@@ -14,7 +14,7 @@ export default function DecisionList({ items }: { items: Decision[] }) {
             <h3 className="mb-1.5 font-sans text-[15px] font-semibold text-ink">
               {i + 1}. {item.question}
             </h3>
-            <p className="font-serif text-sm leading-relaxed text-ink-soft sm:text-[15px]">
+            <p className="font-sans text-sm leading-relaxed text-ink-soft sm:text-[15px]">
               {item.answer}
             </p>
           </div>

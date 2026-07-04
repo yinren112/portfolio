@@ -17,7 +17,7 @@ export default function Section({
             {title}
           </h2>
         )}
-        <div className="font-serif text-[15px] leading-relaxed text-ink-soft sm:text-base">
+        <div className="font-sans text-[15px] leading-relaxed text-ink-soft sm:text-base">
           {children}
         </div>
       </section>

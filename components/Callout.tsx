@@ -10,7 +10,7 @@ export default function Callout({
       <h3 className="mb-2 font-sans text-base font-semibold text-ink">
         {title}
       </h3>
-      <div className="font-serif text-sm leading-relaxed text-ink-soft sm:text-[15px]">
+      <div className="font-sans text-sm leading-relaxed text-ink-soft sm:text-[15px]">
         {children}
       </div>
     </div>

@@ -18,7 +18,7 @@ export default function CaseHeader({
         <h1 className="mb-3 font-sans text-3xl font-bold tracking-tight text-ink sm:text-4xl">
           {name}
         </h1>
-        <p className="mb-5 max-w-2xl font-serif text-lg leading-relaxed text-ink-soft">
+        <p className="mb-5 max-w-2xl font-sans text-lg leading-relaxed text-ink-soft">
           {tagline}
         </p>
         <StatBar stats={stats} />

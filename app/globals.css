@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #141413;
-  --color-ink-soft: #4a4946;
-  --color-ink-faint: #8a887f;
-  --color-paper: #faf9f5;
-  --color-canvas: #e8e6dc;
-  --color-accent: #d97757;
-  --color-accent-blue: #6a9bcc;
-  --color-accent-green: #788c5d;
-  --color-border: #e8e6dc;
-  --color-border-dark: #b0aea5;
-  --color-terminal: #141413;
-  --color-terminal-text: #e8e6dc;
-  --color-terminal-accent: #7ec699;
+  --color-ink: #1c1d1f;
+  --color-ink-soft: #55575c;
+  --color-ink-faint: #8b8d92;
+  --color-paper: #f4f3ef;
+  --color-canvas: #e3e1db;
+  --color-accent: #b5502f;
+  --color-accent-blue: #4d7bab;
+  --color-accent-green: #5f7a4d;
+  --color-border: #e3e1db;
+  --color-border-dark: #a5a39b;
+  --color-terminal: #17181a;
+  --color-terminal-text: #dcdad2;
+  --color-terminal-accent: #6fb287;
 
   /* 系统字体栈：不依赖任何外部字体CDN，保证国内访问不受影响、加载速度最快 */
   --font-sans:
@@ -39,7 +39,7 @@ html {
 body {
   background-color: var(--color-paper);
   color: var(--color-ink);
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
 

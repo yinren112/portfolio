@@ -13,7 +13,7 @@ export default function AboutPage() {
         <h1 className="mb-2 font-sans text-3xl font-bold tracking-tight text-ink sm:text-4xl">
           瓦帕迪力
         </h1>
-        <p className="mb-8 font-serif text-lg text-ink-soft">
+        <p className="mb-8 font-sans text-lg text-ink-soft">
           风景园林本科，AI协同下的全栈实践者
         </p>
       </RevealOnScroll>

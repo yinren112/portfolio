@@ -54,7 +54,7 @@ export default function AiNativePage() {
         <h1 className="mb-3 font-sans text-3xl font-bold tracking-tight text-ink sm:text-4xl">
           我怎么跟AI一起做事
         </h1>
-        <p className="max-w-2xl font-serif text-lg leading-relaxed text-ink-soft">
+        <p className="max-w-2xl font-sans text-lg leading-relaxed text-ink-soft">
           不是最近才开始用AI的。这条时间线是真实的工具使用历史，不是包装出来的故事。
         </p>
       </RevealOnScroll>

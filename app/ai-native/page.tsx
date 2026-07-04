@@ -27,7 +27,7 @@ const TIMELINE = [
   {
     time: "2025-2026",
     title: "编码 Agent 全家桶深度使用",
-    body: "Codex（用得最多）、Claude Code（CLI + 桌面端）、Gemini CLI、以及最新的Antigravity平台，这几款编码Agent都在实际项目里深度用过，不是各装一个试用。不同工具在不同任务上的强弱、容易在哪里犯错，都是靠真实踩坑摸出来的，不是读文档得来的。",
+    body: "Codex（用得最多）、Claude Code（CLI + 桌面端）、Gemini CLI、以及最新的Antigravity平台，这几款编码Agent都在实际项目里深度用过，装一个试用跟真刀真枪用是两回事。不同工具在不同任务上的强弱、容易在哪里犯错，都是自己踩坑摸出来的经验，光看文档学不到。",
   },
   {
     time: "2026",
@@ -55,7 +55,7 @@ export default function AiNativePage() {
           我怎么跟AI一起做事
         </h1>
         <p className="max-w-2xl font-sans text-lg leading-relaxed text-ink-soft">
-          不是最近才开始用AI的。这条时间线是真实的工具使用历史，不是包装出来的故事。
+          用AI已经三年多了，不是最近赶热度才开始。这条时间线是真实的工具使用历史，没有包装成分。
         </p>
       </RevealOnScroll>
 
@@ -87,7 +87,7 @@ export default function AiNativePage() {
           ))}
         </div>
         <p>
-          这些选题不是转述别人的科普文章，是长期实际使用各类AI工具、观察它们在真实任务里表现出的能力边界之后，自己梳理出来的。
+          这些选题是长期实际使用各类AI工具、观察它们在真实任务里的能力边界之后自己梳理出来的，不是照搬现成的科普文章框架。
         </p>
       </Section>
 

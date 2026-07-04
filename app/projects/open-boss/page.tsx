@@ -36,7 +36,7 @@ export default function OpenBossPage() {
           但市面上的自动投递工具有一个问题——它们替你按"立即沟通"按钮，一旦误触了不该投的公司（培训贷、挂羊头卖狗肉的销售岗），你连撤回的机会都没有。
         </p>
         <p>
-          所以我做的不是"自动投递"，而是把"抓取→筛选→人工确认"这条流水线搭起来，
+          所以我没做"自动投递"，做的是把"抓取→筛选→人工确认"这条流水线搭起来——
           <strong className="text-ink">最终决定投不投的权限，始终留在人手里</strong>。
         </p>
       </Section>
@@ -61,7 +61,7 @@ export default function OpenBossPage() {
       <Section>
         <Callout title="这是一个 Agent 原生设计的系统">
           <p className="mb-3">
-            不是"写了个脚本、顺便调了下AI接口"，是从一开始就按Agent的方式设计的：
+            "写了个脚本、顺便调了下AI接口"不足以描述这套系统——它从一开始就是按Agent的方式设计的：
             <strong className="text-ink">感知</strong>
             （抓取岗位数据）→<strong className="text-ink">推理</strong>
             （规则先筛一轮，LLM再判断岗位和自身经历的匹配度）→

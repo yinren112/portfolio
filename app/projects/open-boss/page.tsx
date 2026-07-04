@@ -141,7 +141,8 @@ export default function OpenBossPage() {
 
       <Section title="项目讲解短片">
         <p>
-          配套有一段项目讲解视频（Remotion 代码驱动剪辑），讲清楚pipeline三步走逻辑和核心数据。
+          配套有一段双语讲解视频，用Remotion（React + TypeScript）配合React
+          Three Fiber手写了5个3D场景和转场特效，配音也是脚本生成的——整条视频没进过剪辑软件，时间轴和转场时机全是代码按帧数控制写出来的。讲清楚pipeline三步走逻辑和核心数据。
         </p>
       </Section>
 

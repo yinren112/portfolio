@@ -160,7 +160,32 @@ export default function AiNativePage() {
               <Tag>多模态图像分析（闲鱼监控项目）</Tag>
             </div>
           </div>
+          <div>
+            <span className="mr-2 font-sans text-xs font-semibold text-ink-faint">
+              代码驱动视频 / AIGC
+            </span>
+            <div className="mt-1.5 flex flex-wrap gap-2">
+              <Tag>Remotion + React Three Fiber</Tag>
+              <Tag>自绘3D场景 · 自制转场 · 双语配音</Tag>
+            </div>
+          </div>
         </div>
+      </Section>
+
+      <Section title="这个网站本身也是作品">
+        <p>
+          你现在看的这个网站用 Next.js 15、React、TypeScript、Tailwind CSS
+          写成，
+          <a
+            href="https://github.com/yinren112/portfolio"
+            target="_blank"
+            rel="noreferrer"
+            className="pressable text-accent underline decoration-accent/40 underline-offset-4"
+          >
+            代码开源可查
+          </a>
+          。没有用现成模板或页面搭建器——终端打字机、聚光边框卡片、非对称网格这些细节都是手写的组件。它本身就是对"能不能独立完成一个React/TypeScript前端"这个问题最直接的回答。
+        </p>
       </Section>
     </div>
   );

@@ -95,6 +95,11 @@ export default function OpenBossPage() {
               answer:
                 "同一个岗位可能出现在三个账号的推荐流里，也可能今天推过明天换个标题再推。去重逻辑走三层：加密岗位ID→公司名+岗位名组合→JD文本相似度。实测三账号并行155条推荐，去重后141条唯一，重复率只有9%。",
             },
+            {
+              question: "为什么\"AI精筛\"是一份Prompt模板，不是写死的API调用",
+              answer:
+                "岗位终筛没有接LLM API，而是把判断规则写成prompts/02_final_filter_and_draft.md，每天用当时在开的编码Agent照着跑：6类硬性剔除词（培训贷/刷单、产线伪装、外貌门槛、保险增员、隐藏销售、跑不赢保底线），过审的岗位逐条写45-120字定制开场白。Agent的输出不是照单全收——validate_approved.js会机械校验：judge.evidence必须是JD原文里能查到的原句，不是编出来的；开场白长度卡在35-140字；同一岗位ID不能重复；同一家公司一批最多批准2个。判断交给Agent，兜底交给代码。",
+            },
           ]}
         />
       </Section>

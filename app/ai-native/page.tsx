@@ -107,7 +107,7 @@ export default function AiNativePage() {
               先小范围验证，再整体交付
             </h3>
             <p className="text-sm leading-relaxed">
-              不会让AI一次性生成一个大系统然后祈祷它是对的。先验证一个小功能能跑通，再逐步扩展，出问题的范围永远可控。
+              先让一个小功能真正跑通，再逐步扩展——出问题的范围永远可控。
             </p>
           </div>
           <div>

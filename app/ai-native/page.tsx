@@ -162,7 +162,16 @@ export default function AiNativePage() {
           </div>
           <div>
             <span className="mr-2 font-sans text-xs font-semibold text-ink-faint">
-              代码驱动视频 / AIGC
+              AIGC图像生成
+            </span>
+            <div className="mt-1.5 flex flex-wrap gap-2">
+              <Tag>Nano Banana（Gemini）</Tag>
+              <Tag>GPT-Image-2</Tag>
+            </div>
+          </div>
+          <div>
+            <span className="mr-2 font-sans text-xs font-semibold text-ink-faint">
+              代码驱动视频
             </span>
             <div className="mt-1.5 flex flex-wrap gap-2">
               <Tag>Remotion + React Three Fiber</Tag>

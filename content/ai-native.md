@@ -70,7 +70,8 @@ Codex（用得最多）、Claude Code（CLI + 桌面端）、Gemini CLI、以及
 **评测过的产品**：腾讯 WorkBuddy
 **早期探索**：Stable Diffusion 本地部署（ComfyUI/WebUI）
 **AI能力集成**：DeepSeek API（learn项目的AI批改）、多模态图像分析（闲鱼监控项目）
-**代码驱动视频 / AIGC**：Remotion + React Three Fiber（自绘3D场景、自制转场、双语配音）
+**AIGC图像生成**：Nano Banana（Gemini）、GPT-Image-2
+**代码驱动视频**：Remotion + React Three Fiber（自绘3D场景、自制转场、双语配音）
 
 ---
 

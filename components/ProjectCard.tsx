@@ -1,11 +1,20 @@
+"use client";
+
 import Link from "next/link";
 import type { ProjectSummary } from "@/lib/projects";
 
 export default function ProjectCard({ project }: { project: ProjectSummary }) {
+  function handleMouseMove(e: React.MouseEvent<HTMLAnchorElement>) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty("--spot-x", `${e.clientX - rect.left}px`);
+    e.currentTarget.style.setProperty("--spot-y", `${e.clientY - rect.top}px`);
+  }
+
   return (
     <Link
       href={project.href}
-      className="hover-lift pressable group block rounded-lg border border-border bg-paper p-6 hover:border-border-dark hover:shadow-[0_12px_30px_-8px_rgba(20,20,19,0.12)]"
+      onMouseMove={handleMouseMove}
+      className="spotlight-card hover-lift pressable group block rounded-lg border border-border bg-paper p-6 hover:border-border-dark hover:shadow-[0_12px_30px_-8px_rgba(20,20,19,0.12)]"
     >
       <div className="mb-3 flex items-baseline justify-between gap-3">
         <h3 className="font-sans text-lg font-semibold text-ink">

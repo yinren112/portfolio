@@ -11,7 +11,7 @@ type Line =
 
 const LINES: Line[] = [
   { kind: "command", text: "whoami" },
-  { kind: "output", text: "瓦帕迪力 — 把想法做成能用的东西" },
+  { kind: "output", text: "瓦帕迪力：把想法做成能用的东西" },
   { kind: "command", text: "cat status" },
   {
     kind: "output",
@@ -77,7 +77,7 @@ export default function TerminalHero() {
       : null;
 
   return (
-    <div className="overflow-hidden rounded-xl border border-border-dark/60 bg-terminal shadow-[0_20px_50px_-12px_rgba(20,20,19,0.35)]">
+    <div className="hero-glow overflow-hidden rounded-xl border border-border-dark/60 bg-terminal shadow-[0_20px_50px_-12px_rgba(20,20,19,0.35)]">
       <div className="flex items-center gap-1.5 border-b border-white/10 px-4 py-3">
         <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
         <span className="h-2.5 w-2.5 rounded-full bg-white/20" />

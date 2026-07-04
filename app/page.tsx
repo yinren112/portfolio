@@ -1,8 +1,13 @@
-import Link from "next/link";
 import TerminalHero from "@/components/TerminalHero";
 import ProjectCard from "@/components/ProjectCard";
+import AiNativeTeaser from "@/components/AiNativeTeaser";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import { projects } from "@/lib/projects";
+
+const BENTO_SPAN: Record<number, string> = {
+  0: "lg:col-span-2",
+  3: "lg:col-span-2",
+};
 
 export default function HomePage() {
   return (
@@ -17,35 +22,20 @@ export default function HomePage() {
         </p>
       </RevealOnScroll>
 
-      <div className="mt-14 grid gap-5 sm:mt-16 sm:grid-cols-2">
+      <div className="mt-14 grid gap-5 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, i) => (
-          <RevealOnScroll key={project.slug} delay={i * 60}>
+          <RevealOnScroll
+            key={project.slug}
+            delay={i * 60}
+            className={BENTO_SPAN[i] ?? ""}
+          >
             <ProjectCard project={project} />
           </RevealOnScroll>
         ))}
       </div>
 
       <RevealOnScroll delay={100}>
-        <Link
-          href="/ai-native"
-          className="hover-lift pressable group mt-14 block rounded-xl border border-border-dark/50 bg-canvas p-7 sm:mt-16 sm:p-9"
-        >
-          <p className="mb-2 font-mono text-xs font-medium tracking-wide text-accent">
-            差异化核心
-          </p>
-          <h2 className="mb-3 font-sans text-xl font-bold text-ink sm:text-2xl">
-            从 GPT-3.5 到现在——一直在跟前沿AI工具打交道
-          </h2>
-          <p className="max-w-2xl text-sm leading-relaxed text-ink-soft sm:text-base">
-            2023年就开始把AI当日常工具用，从本地部署过 Stable Diffusion 到现在深度使用
-            Codex / Claude Code / Gemini CLI / Antigravity
-            这一整套编码Agent，还评测过腾讯的
-            WorkBuddy。这套经验本身写成了一门40课的AI基础课程，上线在学习网站里。
-          </p>
-          <p className="mt-4 font-sans text-sm font-medium text-accent">
-            查看完整时间线 →
-          </p>
-        </Link>
+        <AiNativeTeaser />
       </RevealOnScroll>
     </div>
   );

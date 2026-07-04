@@ -17,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <body className="flex min-h-screen flex-col">
+        <div className="grain-overlay" aria-hidden />
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />

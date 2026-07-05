@@ -1,113 +1,132 @@
 import React from "react";
-import { Audio, Sequence, staticFile, useCurrentFrame } from "remotion";
-import { Scene } from "../components/Scene";
-import { Glow } from "../components/Glow";
-import { LogoMark } from "../components/LogoMark";
-import { TerminalCard } from "../components/TerminalCard";
-import { LayerStackDiagram } from "../components/LayerStackDiagram";
-import { StatRow } from "../components/StatRow";
-import { Act } from "../components/Act";
-import { colors, fonts } from "../theme";
+import { AbsoluteFill, Audio, staticFile, useCurrentFrame } from "remotion";
+import { TransitionSeries, linearTiming, springTiming } from "@remotion/transitions";
+import { fade } from "@remotion/transitions/fade";
+import { PromoShell } from "../components/PromoShell";
+import { ThreeHero } from "../components/ThreeHero";
+import { KineticChars, MaskReveal, BlurWords } from "../components/KineticText";
+import { LayerFlow } from "../components/LayerFlow";
+import { Counter } from "../components/Counter";
+import { StatTrio } from "../components/StatTrio";
+import { TerminalOutro } from "../components/TerminalOutro";
+import { LightSweep } from "../components/Cinematic";
+import { Center } from "../components/Center";
+import { scaleThrough, softSlide } from "../lib/transitions";
+import { colors, fonts, rgb } from "../theme";
+import { springIn, ramp } from "../lib/motion";
 
-export const XhsScout: React.FC = () => {
+export const XhsScout: React.FC = () => (
+  <PromoShell dark seed={59}>
+    <Audio src={staticFile("bgm.wav")} />
+    <TransitionSeries>
+      <TransitionSeries.Sequence durationInFrames={90}>
+        <HeroAct />
+      </TransitionSeries.Sequence>
+      <TransitionSeries.Transition presentation={scaleThrough()} timing={springTiming({ config: { damping: 200 }, durationInFrames: 18 })} />
+      <TransitionSeries.Sequence durationInFrames={96}>
+        <ProblemAct />
+      </TransitionSeries.Sequence>
+      <TransitionSeries.Transition presentation={softSlide("up")} timing={linearTiming({ durationInFrames: 16 })} />
+      <TransitionSeries.Sequence durationInFrames={156}>
+        <SystemAct />
+      </TransitionSeries.Sequence>
+      <TransitionSeries.Transition presentation={scaleThrough()} timing={springTiming({ config: { damping: 200 }, durationInFrames: 16 })} />
+      <TransitionSeries.Sequence durationInFrames={84}>
+        <DataAct />
+      </TransitionSeries.Sequence>
+      <TransitionSeries.Transition presentation={fade()} timing={linearTiming({ durationInFrames: 14 })} />
+      <TransitionSeries.Sequence durationInFrames={90}>
+        <OutroAct />
+      </TransitionSeries.Sequence>
+    </TransitionSeries>
+  </PromoShell>
+);
+
+const HeroAct: React.FC = () => (
+  <AbsoluteFill>
+    <ThreeHero tint={rgb.accent} dark />
+    <Center>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 26, marginTop: 40 }}>
+        <MaskReveal from={18}>
+          <div style={{ fontFamily: fonts.sans, fontSize: 70, fontWeight: 700, color: colors.terminalText, letterSpacing: "-0.02em" }}>
+            xhs-rental-scout
+          </div>
+        </MaskReveal>
+        <BlurWords from={34}>
+          <div style={{ fontFamily: fonts.sans, fontSize: 30, color: colors.inkFaint }}>
+            Agent 原生设计的房源筛选系统
+          </div>
+        </BlurWords>
+      </div>
+    </Center>
+    <LightSweep start={40} duration={30} />
+  </AbsoluteFill>
+);
+
+const ProblemAct: React.FC = () => (
+  <Center>
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 22 }}>
+      <BlurWords from={4}>
+        <div style={{ fontFamily: fonts.sans, fontSize: 34, color: colors.inkFaint }}>在小红书上搜房源，翻十条</div>
+      </BlurWords>
+      <div style={{ display: "flex", alignItems: "baseline", gap: 6 }}>
+        <Counter to={8} from={14} color={colors.accent} size={150} />
+        <span style={{ fontFamily: fonts.mono, fontSize: 66, fontWeight: 700, color: colors.accent }}>条是中介</span>
+      </div>
+      <KineticChars text="判断逻辑可以写成规则，不必每次靠肉眼看" from={40} style={{ fontFamily: fonts.sans, fontSize: 26, color: colors.inkSoft }} />
+    </div>
+  </Center>
+);
+
+const SystemAct: React.FC = () => {
+  const frame = useCurrentFrame();
+  const s = springIn(frame, 4);
   return (
-    <>
-      <Audio src={staticFile("bgm.wav")} />
-      <Sequence from={0} durationInFrames={75}>
-        <Scene>
-          <Glow />
-          <Act durationInFrames={75}>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 22 }}>
-              <LogoMark size={100} />
-              <div style={{ fontFamily: fonts.sans, fontSize: 48, fontWeight: 700, color: colors.ink }}>
-                xhs-rental-scout
-              </div>
-              <div style={{ fontFamily: fonts.sans, fontSize: 22, color: colors.inkSoft, textAlign: "center", maxWidth: 720 }}>
-                Agent 原生设计的房源筛选系统
-              </div>
-            </div>
-          </Act>
-        </Scene>
-      </Sequence>
-
-      <Sequence from={65} durationInFrames={105}>
-        <Scene>
-          <Act durationInFrames={105}>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 18, maxWidth: 900 }}>
-              <div style={{ fontFamily: fonts.sans, fontSize: 30, color: colors.inkSoft, textAlign: "center" }}>
-                在小红书上搜房源，翻十条
-              </div>
-              <div style={{ fontFamily: fonts.mono, fontSize: 88, fontWeight: 700, color: colors.accent, lineHeight: 1 }}>
-                8 条是中介
-              </div>
-              <div style={{ fontFamily: fonts.sans, fontSize: 22, color: colors.inkFaint }}>
-                判断逻辑可以写成规则，没必要每次靠肉眼看
-              </div>
-            </div>
-          </Act>
-        </Scene>
-      </Sequence>
-
-      <Sequence from={160} durationInFrames={175}>
-        <Scene>
-          <Act durationInFrames={175}>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 30 }}>
-              <div style={{ fontFamily: fonts.sans, fontSize: 26, fontWeight: 700, color: colors.ink }}>
-                感知 → 推理 → 行动 → 观察
-              </div>
-              <LayerStackWithFrame />
-            </div>
-          </Act>
-        </Scene>
-      </Sequence>
-
-      <Sequence from={325} durationInFrames={65}>
-        <Scene>
-          <Act durationInFrames={65}>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 26 }}>
-              <div style={{ fontFamily: fonts.sans, fontSize: 24, color: colors.inkSoft }}>数据说话</div>
-              <StatRowWithFrame />
-            </div>
-          </Act>
-        </Scene>
-      </Sequence>
-
-      <Sequence from={390} durationInFrames={60}>
-        <Scene dark>
-          <Act durationInFrames={60}>
-            <TerminalCard
-              width={760}
-              lines={[
-                { prompt: "$", text: "cat data/results/R29.md" },
-                { text: "靠它筛出真实房东候选，租到了房子" },
-                { prompt: "$", text: "open github.com/yinren112/xhs-rental-scout", accent: true },
-              ]}
-            />
-          </Act>
-        </Scene>
-      </Sequence>
-    </>
+    <Center>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 40, width: "100%" }}>
+        <div style={{ fontFamily: fonts.sans, fontSize: 40, fontWeight: 700, color: colors.terminalText, opacity: ramp(frame, 4, 14), transform: `translateY(${(1 - s) * 20}px)` }}>
+          感知 <Arrow /> 推理 <Arrow /> 行动 <Arrow /> 观察
+        </div>
+        <LayerFlow
+          from={20}
+          dark
+          width={760}
+          layers={[
+            { title: "xhs 命令行工具", detail: "外部子进程 · 负责搜索/读取" },
+            { title: "pipeline.py", detail: "编排 init/search/read/report" },
+            { title: "rules.py", accent: true, detail: "纯函数规则引擎 · 价格提取含暗语" },
+            { title: "本地文件", detail: "黑白名单库 · 跨轮次证据累积" },
+          ]}
+        />
+      </div>
+    </Center>
   );
 };
 
-const LayerStackWithFrame: React.FC = () => {
-  const frame = useCurrentFrame();
-  return (
-    <LayerStackDiagram
-      frame={frame}
-      startFrame={0}
-      width={560}
-      layers={[
-        { title: "xhs 命令行工具", detail: "外部子进程" },
-        { title: "pipeline.py", detail: "编排" },
-        { title: "rules.py", accent: true, detail: "纯函数规则引擎" },
-        { title: "本地文件", detail: "黑白名单库 · 去重记录" },
+const Arrow: React.FC = () => <span style={{ color: colors.accent, margin: "0 10px", fontWeight: 400 }}>→</span>;
+
+const DataAct: React.FC = () => (
+  <Center>
+    <StatTrio
+      dark
+      items={[
+        { value: 29, label: "轮检索", suffix: "" },
+        { value: 211, label: "个账号画像", suffix: "" },
+        { value: 115, label: "个职业号拉黑", suffix: "" },
       ]}
     />
-  );
-};
+  </Center>
+);
 
-const StatRowWithFrame: React.FC = () => {
-  const frame = useCurrentFrame();
-  return <StatRow frame={frame} startFrame={0} stats={["29 轮检索", "211 个账号画像", "115 个职业号拉黑"]} />;
-};
+const OutroAct: React.FC = () => (
+  <Center>
+    <TerminalOutro
+      from={6}
+      lines={[
+        { prompt: "$", text: "cat data/results/R29.md", typeFrom: 12 },
+        { text: "靠它筛出真实房东候选，租到了房子", typeFrom: 40 },
+        { prompt: "$", text: "open github.com/yinren112/xhs-rental-scout", accent: true, typeFrom: 54 },
+      ]}
+    />
+  </Center>
+);

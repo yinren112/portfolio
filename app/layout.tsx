@@ -29,6 +29,13 @@ export const metadata: Metadata = {
       "四个真实上线的项目，代码可查，可在线体验。",
     images: ["og.png"],
   },
+  // 只想让拿到直达链接的人能看到，不想被搜索引擎收录、也不想出现在别人的搜索结果里。
+  // 不影响微信/Slack等聊天软件的链接预览卡片——那些抓的是上面的 OG 标签，跟 robots 无关。
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
 };
 
 export default function RootLayout({

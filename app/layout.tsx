@@ -3,9 +3,23 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-// 发给 HR 的链接以国内镜像为准，OG 绝对地址统一指向它；
-// Vercel 构建复用同一套，保证聊天软件里的预览卡片始终可用
-const SITE_URL = `https://lailinkeji.com${process.env.NEXT_PUBLIC_BASE_PATH || "/me"}`;
+// OG/Twitter 卡片里的图片、链接必须是"当前实际部署域名"的绝对地址，
+// 不然分享出去链接预览会指向另一个域名——按优先级解析：
+// 1. NEXT_PUBLIC_SITE_URL 手动指定（比如手动打包上传到一个新的 Vercel 项目/域名时用）
+// 2. 自建服务器镜像版（build:mirror 设置了 NEXT_PUBLIC_BASE_PATH）固定指向 lailinkeji.com/me
+// 3. Vercel 用 GitHub 连接构建时，Vercel 会自动注入 VERCEL_PROJECT_PRODUCTION_URL / VERCEL_URL，
+//    直接用它，不用手动配置环境变量
+// 4. 兜底：本地手动 `npm run build` 且以上都没有时，退回镜像域名
+const MIRROR_BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH;
+const VERCEL_DOMAIN =
+  process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (MIRROR_BASE_PATH
+    ? `https://lailinkeji.com${MIRROR_BASE_PATH}`
+    : VERCEL_DOMAIN
+      ? `https://${VERCEL_DOMAIN}`
+      : "https://lailinkeji.com/me");
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

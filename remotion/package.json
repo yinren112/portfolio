@@ -1,0 +1,25 @@
+{
+  "name": "portfolio-promo-videos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "15s promo videos for the portfolio project pages, sharing the site's own design tokens",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render:open-boss": "remotion render src/index.ts OpenBoss out/open-boss.mp4",
+    "render:bookworm": "remotion render src/index.ts Bookworm out/bookworm.mp4",
+    "render:learn": "remotion render src/index.ts Learn out/learn.mp4",
+    "render:xhs-scout": "remotion render src/index.ts XhsScout out/xhs-scout.mp4",
+    "render:all": "npm run render:open-boss && npm run render:bookworm && npm run render:learn && npm run render:xhs-scout"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "4.0.469",
+    "@remotion/cli": "4.0.469"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "typescript": "^5.4.0"
+  }
+}

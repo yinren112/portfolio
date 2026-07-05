@@ -6,6 +6,7 @@ import Callout from "@/components/Callout";
 import DecisionList from "@/components/DecisionList";
 import DataTable from "@/components/DataTable";
 import { Tag } from "@/components/Tag";
+import PromoVideo from "@/components/PromoVideo";
 
 export const metadata: Metadata = {
   title: "xhs-rental-scout · 瓦帕迪力",
@@ -29,6 +30,10 @@ export default function XhsScoutPage() {
           href: "https://github.com/yinren112/xhs-rental-scout",
         }}
       />
+
+      <Section>
+        <PromoVideo src="/videos/xhs-scout-promo.mp4" poster="/videos/posters/xhs-scout-poster.jpg" />
+      </Section>
 
       <Section title="为什么做这个">
         <p>

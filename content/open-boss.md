@@ -16,6 +16,10 @@
 【组件：GitHub 链接按钮，不展示 star 数】
 → 查看源码：github.com/yinren112/open-boss
 
+【组件：15秒项目速览视频（/videos/open-boss-promo.mp4），用 Remotion 按网站自己的设计
+token（暖纸色背景、terracotta强调色、终端深色场景、Pipeline/LayerStack同款组件视觉）渲染，
+不是外部素材硬嵌】
+
 ---
 
 ## 为什么做这个

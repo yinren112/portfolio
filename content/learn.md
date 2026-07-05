@@ -16,6 +16,8 @@
 【组件：主 CTA 按钮】
 → 在线体验：lailinkeji.com/learn/（真实功能，可直接互动，非截图）
 
+【组件：15秒项目速览视频（/videos/learn-promo.mp4），Remotion渲染，跟网站同一套设计语言】
+
 ---
 
 ## 起点：一个只有一个人用的工具

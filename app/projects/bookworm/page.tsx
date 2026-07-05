@@ -7,6 +7,7 @@ import DecisionList from "@/components/DecisionList";
 import DataTable from "@/components/DataTable";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import { Tag } from "@/components/Tag";
+import PromoVideo from "@/components/PromoVideo";
 
 export const metadata: Metadata = {
   title: "bookworm · 瓦帕迪力",
@@ -30,6 +31,10 @@ export default function BookwormPage() {
       <p className="mb-8 -mt-2 font-sans text-xs text-ink-faint">
         仓库涉及真实用户数据和交易记录，为私有仓库。以下用截图和架构说明呈现。
       </p>
+
+      <Section>
+        <PromoVideo src="/videos/bookworm-promo.mp4" poster="/videos/posters/bookworm-poster.jpg" />
+      </Section>
 
       <Section title="为什么做这个">
         <p className="mb-4">

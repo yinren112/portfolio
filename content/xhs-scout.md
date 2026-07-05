@@ -15,6 +15,8 @@
 
 → 查看源码：github.com/yinren112/xhs-rental-scout
 
+【组件：15秒项目速览视频（/videos/xhs-scout-promo.mp4），Remotion渲染，跟网站同一套设计语言】
+
 ---
 
 ## 为什么做这个

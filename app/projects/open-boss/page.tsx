@@ -6,6 +6,7 @@ import Callout from "@/components/Callout";
 import DecisionList from "@/components/DecisionList";
 import DataTable from "@/components/DataTable";
 import { Tag } from "@/components/Tag";
+import PromoVideo from "@/components/PromoVideo";
 
 export const metadata: Metadata = {
   title: "open-boss · 瓦帕迪力",
@@ -26,6 +27,10 @@ export default function OpenBossPage() {
         ]}
         link={{ label: "查看源码：github.com/yinren112/open-boss", href: "https://github.com/yinren112/open-boss" }}
       />
+
+      <Section>
+        <PromoVideo src="/videos/open-boss-promo.mp4" poster="/videos/posters/open-boss-poster.jpg" />
+      </Section>
 
       <Section title="为什么做这个">
         <p className="mb-4">

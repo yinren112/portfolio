@@ -5,6 +5,7 @@ import LayerStack from "@/components/LayerStack";
 import DecisionList from "@/components/DecisionList";
 import DataTable from "@/components/DataTable";
 import { Tag } from "@/components/Tag";
+import PromoVideo from "@/components/PromoVideo";
 
 export const metadata: Metadata = {
   title: "learn · 瓦帕迪力",
@@ -48,6 +49,10 @@ export default function LearnPage() {
           href: "https://lailinkeji.com/learn/",
         }}
       />
+
+      <Section>
+        <PromoVideo src="/videos/learn-promo.mp4" poster="/videos/posters/learn-poster.jpg" />
+      </Section>
 
       <Section title="起点：一个只有一个人用的工具">
         <p className="mb-4">

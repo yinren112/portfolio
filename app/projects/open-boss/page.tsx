@@ -6,7 +6,6 @@ import Callout from "@/components/Callout";
 import DecisionList from "@/components/DecisionList";
 import DataTable from "@/components/DataTable";
 import { Tag } from "@/components/Tag";
-import { withBase } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title: "open-boss · 瓦帕迪力",
@@ -138,37 +137,6 @@ export default function OpenBossPage() {
             ["投递线回复率", "AI 标注线 75%，综合线 73%"],
           ]}
         />
-      </Section>
-
-      <Section title="项目讲解短片">
-        <p className="mb-5">
-          两段短片都是用Remotion（React + TypeScript）配合React Three
-          Fiber手写的：5个3D场景、转场特效、脚本生成的双语配音——整条视频没进过剪辑软件，时间轴和转场时机全是代码按帧数控制写出来的。
-        </p>
-        <div className="grid gap-5 sm:grid-cols-2">
-          <div>
-            <video
-              controls
-              preload="metadata"
-              className="w-full rounded-lg border border-border bg-terminal"
-              src={withBase("/videos/open-boss-promo.mp4")}
-            />
-            <p className="mt-2 font-mono text-xs text-ink-faint">
-              open-boss 主流水线讲解（双语）
-            </p>
-          </div>
-          <div>
-            <video
-              controls
-              preload="metadata"
-              className="w-full rounded-lg border border-border bg-terminal"
-              src={withBase("/videos/boss-jd-grabber-promo.mp4")}
-            />
-            <p className="mt-2 font-mono text-xs text-ink-faint">
-              boss-jd-grabber 浏览器插件演示
-            </p>
-          </div>
-        </div>
       </Section>
 
       <Section title="技术栈一览">

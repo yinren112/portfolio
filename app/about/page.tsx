@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import Section from "@/components/Section";
+import { withBase } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title: "关于 · 瓦帕迪力",
@@ -13,8 +14,11 @@ export default function AboutPage() {
         <h1 className="mb-2 font-sans text-3xl font-bold tracking-tight text-ink sm:text-4xl">
           瓦帕迪力
         </h1>
-        <p className="mb-8 font-sans text-lg text-ink-soft">
+        <p className="mb-3 font-sans text-lg text-ink-soft">
           风景园林本科，AI协同下的全栈实践者
+        </p>
+        <p className="mb-8 font-mono text-sm text-ink-faint">
+          求职方向：AI应用工程师 / AI产品工程师 · 重庆 · 接受全职远程 · 可立即到岗
         </p>
       </RevealOnScroll>
 
@@ -57,6 +61,16 @@ export default function AboutPage() {
         >
           github.com/yinren112
         </a>
+        <a
+          href={withBase("/resume.pdf")}
+          download="瓦帕迪力-简历.pdf"
+          className="pressable hover-lift mt-5 inline-block rounded-lg bg-accent px-5 py-2.5 font-sans text-sm font-medium text-paper"
+        >
+          下载一页简历 PDF
+        </a>
+        <p className="mt-2 text-xs text-ink-faint">
+          方便直接转发给技术面试官或存入人才库，内容与本站一致。
+        </p>
       </Section>
     </div>
   );

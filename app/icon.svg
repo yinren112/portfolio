@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#17181a" />
+  <text x="30" y="44" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f4f3ef" text-anchor="middle">瓦</text>
+  <circle cx="52" cy="46" r="5" fill="#b5502f" />
+</svg>
